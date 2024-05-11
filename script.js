@@ -1,4 +1,3 @@
-@@ -1,20 +1,20 @@
 //your JS code here. If required.
 const savedusername = localStorage.getItem("username");
 const savedpassword = localStorage.getItem("password");
