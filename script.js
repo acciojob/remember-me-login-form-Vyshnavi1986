@@ -1,6 +1,6 @@
 //your JS code here. If required.
 
-let nameInput = document.getElementById('username');
+let nameInput = document.getElementById('Username');
 let passwordInput = document.getElementById("password");
 let checkInput = document.getElementById("checkbox");
 let sbutton = document.getElementById("submit");
