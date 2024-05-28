@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
-    const rememberCheckbox = document.getElementById('checkbox');
+    const rememberCheckbox = document.getElementById('rememberMe');
     const submitButton = document.getElementById('submit');
     const existingButton = document.getElementById('existing');
 
