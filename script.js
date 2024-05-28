@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
@@ -41,4 +41,4 @@ document.addEventListener('DOMContentLoaded', function() {
         const savedUsername = localStorage.getItem('username');
         alert(`Logged in as ${savedUsername}`);
     });
-});
+});*/

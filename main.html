@@ -1,26 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<style>
+    /* Add your CSS styles here */
+</style>
 </head>
 <body>
-    <h1>Login Form</h1>
-    <form id="loginForm">
+
+<h1>Login Form</h1>
+
+<form id="loginForm">
+    <div>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" placeholder="Username">
-        <br>
+    </div>
+    <div>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" placeholder="Password">
-        <br>
-        <input type="checkbox" id="rememberMe" name="rememberMe">
-        <label for="rememberMe">Remember me</label>
-        <br>
+    </div>
+    <div>
+        <input type="checkbox" id="checkbox" name="remember">
+        <label for="checkbox">Remember me</label>
+    </div>
+    <div>
         <input type="submit" id="submit" value="Submit">
-    </form>
-    <button id="existing" style="display: none;">Login as existing user</button>
+    </div>
+</form>
 
-    <script src="script.js"></script>
+<script>
+    // Check if there are saved details in local storage
+    const savedUsername = localStorage.getItem('username');
+    const savedPassword = localStorage.getItem('password');
+
+    // Function to handle form submission
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const rememberMe = document.getElementById('checkbox').checked;
+
+        if (rememberMe) {
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+        } else {
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+        }
+
+        alert(`Logged in as ${username}`);
+    });
+
+    // Display "Login as existing user" button if saved details exist
+    if (savedUsername && savedPassword) {
+        const existingButton = document.createElement('button');
+        existingButton.id = 'existing';
+        existingButton.textContent = 'Login as existing user';
+        existingButton.addEventListener('click', function() {
+            alert(`Logged in as ${savedUsername}`);
+        });
+        document.body.appendChild(existingButton);
+    }
+</script>
+
 </body>
 </html>
